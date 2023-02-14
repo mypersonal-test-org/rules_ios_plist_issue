@@ -1,0 +1,13 @@
+startup --output_base=./bazel-output-base
+
+build --announce_rc
+build --spawn_strategy=local
+build --verbose_failures
+build --compilation_mode=fastbuild
+build --experimental_multi_threaded_digest
+build --verbose_failures
+
+common:ci --isatty=1
+common:ci --terminal_columns=127
+build:ci --xcode_version=14.2
+build:ci --xcode_version_config=//:host_xcodes

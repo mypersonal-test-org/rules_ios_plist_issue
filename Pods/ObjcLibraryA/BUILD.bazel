@@ -1,0 +1,14 @@
+objc_library(
+  name = "ObjcLibraryA",
+  testonly = False,
+  srcs = glob([
+    "Sources/*.h",
+    "Sources/*.m"
+  ]),
+  deps = [
+    "//Pods/FrameworkB:FrameworkB",
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
